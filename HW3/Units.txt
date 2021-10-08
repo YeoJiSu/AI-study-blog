@@ -1,0 +1,8 @@
+inch,.083333
+yard,3
+meter,3.28155
+fathom,6
+rod,16.5
+furlong,660
+kilometer,3281.5
+mile,5280
