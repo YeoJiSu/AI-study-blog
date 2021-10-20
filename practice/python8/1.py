@@ -1,5 +1,7 @@
 #1. numpy- ARRAYS
 import numpy as np
+import matplotlib.pyplot as pl
+
 a1= np.array([1,2,3])
 a2= np.array([[1,2],[3,4]])
 a3= np.array([1,2,3,4,5], ndmin=3)
@@ -80,7 +82,7 @@ d = np.linalg.eig(a) # a의 eigenvalues and eigenvectors of a
 x = np.linalg.solve(a,b) # ax = b 가 되는 x 구하기 
 
 #8. numpy - MatPlotLib
-import matplotlib.pyplot as pl
+
 gaussian = lambda x: np.exp(-(0.5-x)**2/1.5)
 x= np.arange(-2,2.5, 0.01)
 y= gaussian(x)
