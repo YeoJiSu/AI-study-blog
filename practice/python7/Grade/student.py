@@ -27,10 +27,27 @@ class LGstudent(Student): # Subclass of Student
         else:
             return "F"
 class PFstudent(Student): # Subclass of Student 
+    def __init__(self, name="", midterm=0, final=0, fullTime=True):
+        super().__init__(name, midterm, final)
+        self._fullTime = fullTime
+        
+    def setFullTime(self, fullTime):
+        self._fullTime = fullTime
+    
+    def getFullTime(self):
+        return self._fullTime
+    
     def calcSemGrade(self):
         average = round((self._midterm + self._final) / 2)
         if average >= 60:
             return "Pass" 
         else:
             return "Fail"
+    
+    def __str__(self):
+        if self._fullTime : 
+            status = "Full-Time"
+        else :
+            status = "Part-Time"
+        return (self._name + "\t"+ self.calcSemGrade() + "\t" + status)
         
