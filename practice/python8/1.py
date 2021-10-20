@@ -40,7 +40,30 @@ m4 = np.array([[11,12],[13,14]])
 
 print(m1)
 print(m2)
-print(m3+m4)
-print(m3*m4)
-print(np.dot(m3,m4))
-print(np.inner(m3,m4))
+
+print(m3+m4) # 그냥 점끼리만 더헤진거 
+print(m3*m4) # 그냥 점끼리만 곱해진거 
+print(np.dot(m3,m4)) # 행렬의 곱
+print(np.inner(m3,m4)) # 행렬의 곱을 가로가로 세로세로 한거 
+
+#5. numpy - mathematical function
+a = np.array([-1.7, 1.5, -0.2, 0.6, 10])
+n = np.around(a) # 가까운 수로 반올림 -2. 2. -0. 1. 10.
+c = np.floor(a) # 크지 않은 최대 정수 -2. 1. -1. 0. 10.
+d = np.ceil(a) #  올림 작지 않은 최소 -1. 2. -0. 1. 10.
+
+a = np.array([1.0, 5.55, 123, 0.597, 25.532])
+b = np.around(a) # 1. 6. 123. 1. 26.
+c = np.around(a, decimals=1) # 1. 5.6 123. 0.6 25.5
+d = np.around(a, decimals=-1) # 0. 10.120. 0. 30. *****여기 어렵구만***
+
+a = np.array([[3,7,5],[8,4,3],[2,4,9]])
+d = np.amin(a) #2
+e = np.amax(a) #9
+b = np.amin(a,1) # 1은 가로 방향 이라는 뜻이고 
+# 3 3 2
+c = np.amin(a,0) # 0은 세로 방향 이라는 뜻이다.
+# 2 4 3
+k = np.average(a) # 평균
+e = np.std(a) # 표준편차
+g = np.var(a) # 분산
