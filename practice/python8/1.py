@@ -67,3 +67,27 @@ c = np.amin(a,0) # 0은 세로 방향 이라는 뜻이다.
 k = np.average(a) # 평균
 e = np.std(a) # 표준편차
 g = np.var(a) # 분산
+
+#6. numpy - random numbers
+b= np.random.rand(3,2) # 0부터 1까지의 수를 3행 2열로 표현 
+c= np.random.randint(5, size=(2,4)) # 0부터 4까지의 정수를 (2,4)행렬로 랜덤하게 
+
+#7. numpy - linear algebra
+a = np.array([[1,2],[3,4]])
+b = np.array([[-4],[1]])
+c = np.linalg.inv(a) # a의 inverse matrix
+d = np.linalg.eig(a) # a의 eigenvalues and eigenvectors of a
+x = np.linalg.solve(a,b) # ax = b 가 되는 x 구하기 
+
+#8. numpy - MatPlotLib
+import matplotlib.pyplot as pl
+gaussian = lambda x: np.exp(-(0.5-x)**2/1.5)
+x= np.arange(-2,2.5, 0.01)
+y= gaussian(x)
+
+pl.figure()
+pl.plot(x,y)
+pl.xlabel('x values')
+pl.ylabel('exp(-(0.5-x)**2/1.5)')
+pl.title("Gaussian Function")
+pl.show()
