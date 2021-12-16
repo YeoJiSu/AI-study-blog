@@ -38,9 +38,9 @@ def calcDistanceTable(numCities, locations):
     return table # A symmetric matrix of pairwise distances
 
 def randomInit(p):   # Return a random initial tour
-    n = p[0]
-    init = list(range(n))
-    random.shuffle(init)
+    n = p[0]         # 'p': [numCities, locations, distanceTable]
+    init = list(range(n)) # [0,1,2,3,......,n-1]
+    random.shuffle(init) # 다섞어 
     return init
 
 def evaluate(current, p):

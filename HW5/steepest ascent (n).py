@@ -18,7 +18,7 @@ def steepestAscent(p):
         successor, valueS = bestOf(neighbors, p)
         if valueS >= valueC:
             break
-        else:
+        else: # 새로구한 결과값이 더 작으면 현재값 갱신함 
             current = successor
             valueC = valueS
     return current, valueC
@@ -39,14 +39,14 @@ def bestOf(neighbors, p):
     all = []
     # i가 0부터 neighbors의 길이 -1 까지 반복문을 돌림.
     for i in range(0,len(neighbors)):
-        # all list에 neighbors의 모든 경우에 대해 evaluate을 하여 붙여넣습니다. 
+        # all list에 neighbors의 모든 경우에 대해 결과값 계산해서 넣음 
         all.append(evaluate(neighbors[i],p))
-    # 만들어진 list의 원소값 중 최솟값을 bestValue에 저장합니다. 
+    # 최솟값을 bestValue에 저장합니다. 
     bestValue=min(all)
     # 만들어진 list의 원소값중 최솟값의 index를 찾아 해당 index의 neighbors값을 best 에 저장합니다.
     best = neighbors[all.index(min(all))]
 
-    return best, bestValue
+    return best, bestValue # 배열이랑 최소 결과값 반환함 
 
 def displaySetting():
     print()

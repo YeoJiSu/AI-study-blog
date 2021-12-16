@@ -35,20 +35,25 @@ def mutants(current, p): # Inversion only
             neighbors.append(curCopy)
     return neighbors
 def bestOf(neighbors, p):
-    # 모두다 evaluation을 해봄 
-    # 우선은 neighbors의 0번째 원소를 best에 저장하고
-    # 그 0번째 원소를 가지고 p를 evaluate 한 값을 bestValue에 저장한다.
-    best = neighbors[0]
-    bestValue = evaluate(best,p)
-    # neighbors안에 있는 모든 원소에 대해 for 문을 돌리는 데 
-    for i in neighbors:
-        new_value = evaluate(i,p)
-        # 초기 설정했던 bestValue보다 새로 생성한 new_value 값이 더 작다면 
-        # bestValue 값과 best 값을 더 작은 수로 바꾼다.
-        # 그리고 for문을 계속해서 돌리면서 작은 수가 나타난다면 계속 바꾸어 준다.
-        if new_value < bestValue:
-            best = i
-            bestValue = new_value
+    # # 모두다 evaluation을 해봄 
+    # # 우선은 neighbors의 0번째 원소를 best에 저장하고
+    # # 그 0번째 원소를 가지고 p를 evaluate 한 값을 bestValue에 저장한다.
+    # best = neighbors[0]
+    # bestValue = evaluate(best,p)
+    # # neighbors안에 있는 모든 원소에 대해 for 문을 돌리는 데 
+    # for i in neighbors:
+    #     new_value = evaluate(i,p)
+    #     # 초기 설정했던 bestValue보다 새로 생성한 new_value 값이 더 작다면 
+    #     # bestValue 값과 best 값을 더 작은 수로 바꾼다.
+    #     # 그리고 for문을 계속해서 돌리면서 작은 수가 나타난다면 계속 바꾸어 준다.
+    #     if new_value < bestValue:
+    #         best = i
+    #         bestValue = new_value
+    all = []
+    for i in range(len(neighbors)):
+        all.append(evaluate(neighbors[i],p))
+    bestValue  = min(all)
+    best = neighbors[all.index(bestValue)]
     return best, bestValue
 def displaySetting():
     print()

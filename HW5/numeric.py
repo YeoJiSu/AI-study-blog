@@ -6,22 +6,11 @@ NumEval = 0    # Total number of evaluations
 
 
 def createProblem():
-    ## Read in an expression and its domain from a file.
-    ## Then, return a problem.
-
-        ## Read in an expression and its domain from a file.
-    ## Then, return a problem 'p'.
-    ## 'p' is a tuple of 'expression' and 'domain'.
-    ## 'expression' is a string.
-    ## 'domain' is a list of 'varNames', 'low', and 'up'.
-    ## 'varNames' is a list of variable names.
-    ## 'low' is a list of lower bounds of the varaibles.
-    ## 'up' is a list of upper bounds of the varaibles.
-    
     fileName = input("Enter the file name of a function: ")
     infile = open(fileName, 'r')
     expression = infile.readline() 
     # 파일의 첫번째 줄이 식이므로 이를 읽어와 expression 변수에 저장한다.  
+    
     varNames=[] # 변수들을 저장할 list
     low=[] # 각 변수들의 범위 최솟값을 저장할 list
     up=[] # 각 변수들의 범위 최댓값을 저장할 list
@@ -40,6 +29,7 @@ def createProblem():
         up.append(u)
         line = infile.readline()
     # domain에 저장한 각각의 변수이름, 최소, 최대 리스트를 모두 저장합니다. 
+    infile.close()
     domain=[varNames,low,up]  
     return expression, domain
 
@@ -73,7 +63,7 @@ def mutate(current, i, d, p): ## Mutate i-th of 'current' if legal
     u = domain[2][i]     # Upper bound of i-th
     if l <= (curCopy[i] + d) <= u:
         curCopy[i] += d
-    return curCopy
+    return curCopy # 돌연변이 리스트를 반환
 
 def describeProblem(p):
     print()

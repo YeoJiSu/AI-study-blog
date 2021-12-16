@@ -7,7 +7,7 @@ def main():
     # Create an instance of numerical optimization problem
     p = createProblem()   # 'p': [expr, domain]
     # Call the search algorithm
-    solution, minimum = firstChoice(p)
+    solution, minimum = firstChoice(p) # solution은 결과 돌연변이 리스트 배열, minimum은 계산된 결과값
     # Show the problem and algorithm settings
     describeProblem(p)
     displaySetting()
