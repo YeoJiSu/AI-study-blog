@@ -243,11 +243,6 @@ class SimulatedAnnealing(MetaHeuristics):
         print("Search Algorithm: Simulated Annealing")
         print()
         MetaHeuristics.displaySetting(self)
-    
-    #### 이거 외우자 ####
-    def run(self, p):
-        
-        
         
     def run(self, p):
         current = p.randomInit()
